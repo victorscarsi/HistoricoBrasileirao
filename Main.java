@@ -7,9 +7,7 @@ public class Main {
         CSVReader full = new CSVReader(".\\ada_brasileirao_dataset-master\\campeonato-brasileiro-full.csv");
         CSVReader gols = new CSVReader(".\\ada_brasileirao_dataset-master\\campeonato-brasileiro-gols.csv");
 
-        System.out.println(cartoes.dados.get(0));
-        System.out.println(cartoes.dados.get(1));
-        System.out.println(cartoes.dados.get(2));
-        System.out.println(cartoes.dados.size());
+        
+
     }
 }
