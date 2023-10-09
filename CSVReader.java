@@ -3,18 +3,18 @@ import java.util.ArrayList;
 
 public class CSVReader {
     private String caminho;
-    public ArrayList<String[]> dados;
+    public ArrayList<String[]> linhas;
 
     public CSVReader(String caminho) {
         this.caminho = caminho;
-        this.dados = new ArrayList<String[]>();
+        this.linhas = new ArrayList<String[]>();
 
         File arquivo = new File(caminho);
         BufferedReader leitura = null;
         String linha = null;
 
         try {
-           leitura = new BufferedReader(new FileReader(arquivo));
+            leitura = new BufferedReader(new FileReader(arquivo));
             while ((linha = leitura.readLine()) != null) {
                 //dados.add(linha);
                 String[] linhaSeparada = linha.split(",");
@@ -25,8 +25,9 @@ public class CSVReader {
                         linhaSeparada[i] = null;
                     }
                 }
-                dados.add(linhaSeparada);
+                linhas.add(linhaSeparada);
             }
+            leitura.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
